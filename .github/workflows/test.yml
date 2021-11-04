@@ -32,7 +32,10 @@ jobs:
     steps:
       # Performs a clean installation of all dependencies in the `package.json` file
       # For more information, see https://docs.npmjs.com/cli/ci.html
-      - name: test
+      - name: test0
+        run: apt install docker
+
+      - name: test1
         run: docker ps -a
 
       - name: test2
