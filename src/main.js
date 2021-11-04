@@ -13,6 +13,7 @@ logger.error("ERROR message");
 logger.fatal("FATAL message");
 */
 const MySQL = require('mysql');
+const { exit } = require('process');
 
 console.log("utilisateur avant MySQL.createConnection");
 console.log(`DB_HOST : ${process.env.DB_HOST}`);
@@ -37,10 +38,13 @@ const mysqlConnection = MySQL.createConnection({
 console.log("utilisateur après MySQL.createConnection");
 
 mysqlConnection.connect((err) => {
-    if (!err)
+    if (!err){
         console.log("DB connection succeed");
+        process.exit(0);
+    }
     else {
         console.log("DB connection failed");
         console.log(err);
+        process.exit(1);
     }
 });
