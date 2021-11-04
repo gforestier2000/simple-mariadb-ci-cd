@@ -13,14 +13,14 @@ logger.error("ERROR message");
 logger.fatal("FATAL message");
 */
 const MySQL = require('mysql');
-/*
-logger.debug("utilisateur avant MySQL.createConnection");
-logger.debug(`DB_HOST : ${process.env.DB_HOST}`);
-logger.debug(`DB_PORT : ${process.env.DB_PORT}`);
-logger.debug(`DB_USER : ${process.env.DB_USER}`);
-logger.debug(`DB_PASSWORD : ${process.env.DB_PASSWORD}`);
-logger.debug(`DB_DATABASE : ${process.env.DB_DATABASE}`);
- */
+
+console.log("utilisateur avant MySQL.createConnection");
+console.log(`DB_HOST : ${process.env.DB_HOST}`);
+console.log(`DB_PORT : ${process.env.DB_PORT}`);
+console.log(`DB_USER : ${process.env.DB_USER}`);
+console.log(`DB_PASSWORD : ${process.env.DB_PASSWORD}`);
+console.log(`DB_DATABASE : ${process.env.DB_DATABASE}`);
+
 
 const mysqlConnection = MySQL.createConnection({
     host: process.env.DB_HOST, //192.168.2.47
