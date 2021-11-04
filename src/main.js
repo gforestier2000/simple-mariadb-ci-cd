@@ -1,5 +1,5 @@
 console.log("hello");
-require('dotenv').config();
+/*require('dotenv').config();
 // prendre en compte l'environnement
 //require('dotenv').config({path: __dirname + '/.env'});
 
@@ -11,16 +11,16 @@ logger.info("INFO message");
 logger.warn("WARN message");
 logger.error("ERROR message");
 logger.fatal("FATAL message");
-
+*/
 const MySQL = require('mysql');
-
+/*
 logger.debug("utilisateur avant MySQL.createConnection");
 logger.debug(`DB_HOST : ${process.env.DB_HOST}`);
 logger.debug(`DB_PORT : ${process.env.DB_PORT}`);
 logger.debug(`DB_USER : ${process.env.DB_USER}`);
 logger.debug(`DB_PASSWORD : ${process.env.DB_PASSWORD}`);
 logger.debug(`DB_DATABASE : ${process.env.DB_DATABASE}`);
-
+ */
 
 const mysqlConnection = MySQL.createConnection({
     host: process.env.DB_HOST, //192.168.2.47
@@ -34,13 +34,13 @@ const mysqlConnection = MySQL.createConnection({
 
 //const mysqlConnection = require('../config/dbconfig');
 
-logger.debug("utilisateur après MySQL.createConnection");
+console.log("utilisateur après MySQL.createConnection");
 
 mysqlConnection.connect((err) => {
     if (!err)
-        logger.info("DB connection succeed");
+        console.log("DB connection succeed");
     else {
-        logger.fatal("DB connection failed");
-        logger.fatal(err);
+        console.log("DB connection failed");
+        console.log(err);
     }
 });
