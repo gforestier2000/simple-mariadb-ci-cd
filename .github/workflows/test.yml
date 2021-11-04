@@ -22,7 +22,8 @@ jobs:
           MARIADB_USER: appchess
           MARIADB_PASSWORD: Chess,aminum2021
         # Set health checks to wait until postgres has started
-        #options: >-
+        options: >-
+           --expose 3306:3306
         #  --health-cmd pg_isready
         #  --health-interval 10s
         #  --health-timeout 5s
