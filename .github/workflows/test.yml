@@ -24,13 +24,10 @@ jobs:
         # Set health checks to wait until postgres has started
         options: >-
            --expose 3306
-        #  --health-cmd pg_isready
-        #  --health-interval 10s
-        #  --health-timeout 5s
-        #  --health-retries 5
-      steps:
-        - name: test1
-          run: /usr/bin/docker ps -a
+           --health-cmd mysql -uappchess -p'Chess,aminum2021' --execute 'SHOW DATABASES;'
+           --health-interval 10s
+           --health-timeout 5s
+           --health-retries 5
 
     steps:
 
