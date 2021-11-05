@@ -2,6 +2,9 @@ name: GoToDockerHub
 on: push
 
 jobs:
+  # Label of the container job
+  go-to-dokerhub:
+
     # Containers must run in Linux based operating systems
     runs-on: ubuntu-latest
 
