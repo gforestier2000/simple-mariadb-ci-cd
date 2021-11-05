@@ -3,7 +3,7 @@ on: push
 
 jobs:
   # Label of the container job
-  container-job:
+  test-against-dbservice:
     # Containers must run in Linux based operating systems
     runs-on: ubuntu-latest
     # Docker Hub image that `container-job` executes in
@@ -93,4 +93,49 @@ jobs:
         run: |
           echo le premier truc
           echo le deuxieme truc
+
+  store-image:
+    needs: container-job
+    # Containers must run in Linux based operating systems
+    runs-on: ubuntu-latest
+    # Docker Hub image that `container-job` executes in
+    container: node:10.18-jessie
+
+    steps:
+
+      # Downloads a copy of the code in your repository before running CI tests
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      # Performs a clean installation of all dependencies in the `package.json` file
+      # For more information, see https://docs.npmjs.com/cli/ci.html
+      - name: Install dependencies
+        run: npm ci
+      - name: Le truc a faire
+        run: |
+          echo le premier truc
+          echo le deuxieme truc
+
+  deploy-image:
+    needs: container-job
+    # Containers must run in Linux based operating systems
+    runs-on: ubuntu-latest
+    # Docker Hub image that `container-job` executes in
+    container: node:10.18-jessie
+
+    steps:
+
+      # Downloads a copy of the code in your repository before running CI tests
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      # Performs a clean installation of all dependencies in the `package.json` file
+      # For more information, see https://docs.npmjs.com/cli/ci.html
+      - name: Install dependencies
+        run: npm ci
+      - name: Le truc a faire
+        run: |
+          echo le premier truc
+          echo le deuxieme truc
+
 
