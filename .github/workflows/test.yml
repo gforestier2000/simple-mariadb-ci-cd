@@ -73,7 +73,7 @@ jobs:
           DB_DATABASE: chess
 
   build-image:
-    needs: container-job
+    needs: test-against-dbservice
     # Containers must run in Linux based operating systems
     runs-on: ubuntu-latest
     # Docker Hub image that `container-job` executes in
@@ -95,7 +95,7 @@ jobs:
           echo le deuxieme truc
 
   store-image:
-    needs: container-job
+    needs: build-image
     # Containers must run in Linux based operating systems
     runs-on: ubuntu-latest
     # Docker Hub image that `container-job` executes in
@@ -117,7 +117,7 @@ jobs:
           echo le deuxieme truc
 
   deploy-image:
-    needs: container-job
+    needs: store-image
     # Containers must run in Linux based operating systems
     runs-on: ubuntu-latest
     # Docker Hub image that `container-job` executes in
