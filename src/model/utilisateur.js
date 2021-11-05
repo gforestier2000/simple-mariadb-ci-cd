@@ -3,7 +3,7 @@ const db = require('../config/db.js');
 
 
 function  checkDatabase(){
-    const tableExist = "USE `chess`; DROP TABLE IF EXISTS `users`; CREATE TABLE `users` ( \
+    const tableExist = "USE `chess`;  DROP TABLE IF EXISTS `users`; CREATE TABLE `users` ( \
         `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id de l''utilisateur', \
         `email` varchar(250) NOT NULL COMMENT 'email de l''utilisateur', \
         `firstname` varchar(250) DEFAULT NULL COMMENT 'pr├®nom de l''utilisateur', \
