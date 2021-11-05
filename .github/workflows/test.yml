@@ -9,7 +9,7 @@ jobs:
     # Docker Hub image that `container-job` executes in
     container: node:10.18-jessie
 
-    
+
     # Service containers to run with `container-job`
     services:
       # Label used to access the service container
@@ -24,11 +24,11 @@ jobs:
           MARIADB_PASSWORD: Chess,aminum2021
         # Set health checks to wait until postgres has started
         options: >-
-           --expose 5306
            --health-cmd "mysql -uroot -p'2021aminum%' --execute 'SHOW DATABASES;'"
            --health-interval 10s
            --health-timeout 5s
            --health-retries 5
+        #   --expose 5306 not needed because the app is on the same workflow
 
     steps:
 

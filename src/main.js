@@ -31,7 +31,7 @@ const mysqlConnection = MySQL.createConnection({
     database: process.env.DB_DATABASE
 });
 */
-const db = require('./db');
+const db = require('./config/db');
 db.connection().connect((err) => {
     if (!err){
         console.log("DB connection succeed");

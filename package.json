@@ -2,8 +2,9 @@
   "name": "simple-mariadb-ci-cd",
   "version": "0.0.1",
   "description": "Application de démonstration avec MariaDB et CI/CD",
-  "main": "src/main.js",
+  "main": "src/simple-mariadb-server.js",
   "scripts": {
+    "start": "node ./src/simple-mariadb-server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
