@@ -43,7 +43,18 @@ jobs:
       
       - name: Database initialisation
         run: node ./src/dbinit-schema.js
-        
+        env:
+          # The hostname used to communicate with the PostgreSQL service container
+          # POSTGRES_HOST: dbgfo
+          # The default PostgreSQL port
+          # POSTGRES_PORT: 3306
+          LOGLEVEL: debug
+          DB_HOST: dbgfo
+          DB_PORT: 3306
+          DB_USER: appchess
+          DB_PASSWORD: Chess,aminum2021
+          DB_DATABASE: chess
+                  
       - name: Connect to MariaDB
         # Runs a script that creates a PostgreSQL table, populates
         # the table with data, and then retrieves the data.
