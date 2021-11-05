@@ -73,7 +73,7 @@ jobs:
           DB_DATABASE: chess
 
   build-image:
-    needs: container-job
+    needed: container-job
 
     steps:
 
