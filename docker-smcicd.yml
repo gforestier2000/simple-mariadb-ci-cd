@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  dbgfo:
+    image: mariadb:latest
+    restart: always
+    volumes:
+      - dbgfodata:/var/lib/mysql
+    ports:
+      - 5306:3306
+    environment:
+      MARIADB_ROOT_PASSWORD: 2021aminum%
+      MARIADB_DATABASE: chess
+      MARIADB_USER: appchess
+      MARIADB_PASSWORD: Chess,aminum2021
+
+  
+  phpmyadmingfo:
+    depends_on:
+      - dbgfo
+    image: phpmyadmin:latest
+    restart: unless-stopped
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: dbgfo
+      PMA_PASSWORD: 2021aminum%
+
+  smcicd:
+    depends_on:
+      - dbgfo
+    image: smcicd:latest
+    restart: always
+    ports:
+      - 8042:8042
+    environment:
+      LOGLEVEL: debug
+      NODEPORT: 8042
+      DB_HOST: dbgfo
+      DB_PORT: 3306
+      DB_USER: appchess
+      DB_PASSWORD: Chess,aminum2021
+      DB_DATABASE: chess
+
+
+volumes:
+  dbgfodata:
+    driver: local
