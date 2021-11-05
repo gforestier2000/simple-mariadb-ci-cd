@@ -54,7 +54,7 @@ jobs:
           DB_USER: appchess
           DB_PASSWORD: Chess,aminum2021
           DB_DATABASE: chess
-                  
+
       - name: Connect to MariaDB
         # Runs a script that creates a PostgreSQL table, populates
         # the table with data, and then retrieves the data.
@@ -71,3 +71,22 @@ jobs:
           DB_USER: appchess
           DB_PASSWORD: Chess,aminum2021
           DB_DATABASE: chess
+
+  build-image:
+    needs: container-job
+
+    steps:
+
+      # Downloads a copy of the code in your repository before running CI tests
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      # Performs a clean installation of all dependencies in the `package.json` file
+      # For more information, see https://docs.npmjs.com/cli/ci.html
+      - name: Install dependencies
+        run: npm ci
+      - name: Le truc a faire
+        run: |
+          echo le premier truc
+          echo le deuxieme truc
+

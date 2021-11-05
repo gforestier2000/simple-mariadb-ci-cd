@@ -18,10 +18,10 @@ var listener = app.listen(PORT, () => {
     //console.log(listener.address());
   });
 
-  setTimeout(() => {
+ /* setTimeout(() => {
       //console.log('Kill après :  60 000 ms');
       process.kill(0);
-  },60000);
+  },60000);*/
   
 
 
