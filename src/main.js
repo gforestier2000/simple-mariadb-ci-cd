@@ -1,4 +1,4 @@
-console.log("hello");
+//console.log("hello");
 require('dotenv').config();
 /*// prendre en compte l'environnement
 //require('dotenv').config({path: __dirname + '/.env'});
@@ -15,12 +15,12 @@ logger.fatal("FATAL message");
 //const MySQL = require('mysql');
 const { exit } = require('process');
 
-console.log("utilisateur avant MySQL.createConnection");
-console.log(`DB_HOST : ${process.env.DB_HOST}`);
-console.log(`DB_PORT : ${process.env.DB_PORT}`);
-console.log(`DB_USER : ${process.env.DB_USER}`);
-console.log(`DB_PASSWORD : ${process.env.DB_PASSWORD}`);
-console.log(`DB_DATABASE : ${process.env.DB_DATABASE}`);
+//console.log("utilisateur avant MySQL.createConnection");
+//console.log(`DB_HOST : ${process.env.DB_HOST}`);
+//console.log(`DB_PORT : ${process.env.DB_PORT}`);
+//console.log(`DB_USER : ${process.env.DB_USER}`);
+//console.log(`DB_PASSWORD : ${process.env.DB_PASSWORD}`);
+//console.log(`DB_DATABASE : ${process.env.DB_DATABASE}`);
 
 /*
 const mysqlConnection = MySQL.createConnection({
@@ -34,28 +34,28 @@ const mysqlConnection = MySQL.createConnection({
 const db = require('./config/db');
 db.connection().connect((err) => {
     if (!err){
-        console.log("DB connection succeed");
+        //console.log("DB connection succeed");
         process.exit(0);
     }
     else {
-        console.log("DB connection failed");
-        console.log(err);
+        //console.log("DB connection failed");
+        //console.log(err);
         process.exit(1);
     }
 });
 
 //const mysqlConnection = require('../config/dbconfig');
 
-console.log("utilisateur après MySQL.createConnection");
+//console.log("utilisateur après MySQL.createConnection");
 /*
 mysqlConnection.connect((err) => {
     if (!err){
-        console.log("DB connection succeed");
+        //console.log("DB connection succeed");
         process.exit(0);
     }
     else {
-        console.log("DB connection failed");
-        console.log(err);
+        //console.log("DB connection failed");
+        //console.log(err);
         process.exit(1);
     }
 });

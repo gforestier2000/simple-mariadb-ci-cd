@@ -11,7 +11,7 @@ const Users = require("../model/utilisateur");
 
 // ADD a user
 router.post("/users/", (request, response) => {
-    console.log("POST /users/ requested");
+    //console.log("POST /users/ requested");
     Users.saveUser(request.body.email, request.body.firstname, request.body.lastname,
         (err, res) => {
             if (err) return response.status(500).json(`FAILED to insert : ${err.message}`);
@@ -21,7 +21,7 @@ router.post("/users/", (request, response) => {
 
 // GET all users
 router.get("/users/", (request, response) => {
-    console.log("GET /users/ requested");
+    //console.log("GET /users/ requested");
     Users.findAllUsers((err, res) => {
         if (err) return response.status(500).json(`FAILED Select all user : ${err.message}`);
         return response.status(200).json(res);
@@ -30,7 +30,7 @@ router.get("/users/", (request, response) => {
 
 // GET a specific user by ID
 router.get("/users/:id", (request, response) => {
-    console.log("GET /users/:id requested");
+    //console.log("GET /users/:id requested");
 
     const id = request.params.id;
 
@@ -43,7 +43,7 @@ router.get("/users/:id", (request, response) => {
 
 // DELETE a specific user by ID
 router.delete("/users/:id", (request, response) => {
-    console.log("DELETE /users/:id requested");
+    //console.log("DELETE /users/:id requested");
 
     const id = request.params.id;
 
@@ -56,7 +56,7 @@ router.delete("/users/:id", (request, response) => {
 
 // UPDATE a specific user by ID
 router.put("/users/:id", (request, response) => {
-    console.log(`PUT /users/ ${request.params.id} requested :`);
+    //console.log(`PUT /users/ ${request.params.id} requested :`);
 
     const id = request.params.id;
 

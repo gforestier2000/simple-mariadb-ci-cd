@@ -1,8 +1,12 @@
 const request = require("supertest");
 const app = require('../simple-mariadb-app');
 
-//const request = supertest(app);
 let localId = 0;
+
+beforeAll(() => {
+    console.log('1 - beforeAll');
+    return true;
+  });
 
 describe("POST /users", () => {
 
@@ -31,7 +35,7 @@ describe("PUT /users/:id", () => {
                 firstname: "Titi107",
                 lastname: "Loiseau"
             });
-            console.log(response.body);
+            //console.log(response.body);
             expect(response.statusCode).toBe(200);
         });
     });
@@ -43,7 +47,7 @@ describe("GET /users/:id", () => {
     describe("when passed with an existing id", () => {
         test("should respond with a 202 status code", async () => {
             const response = await request(app).get(`/users/${localId}`).send();
-            console.log(response.body);
+            //console.log(response.body);
             expect(response.statusCode).toBe(200);
         });
     });
@@ -55,7 +59,7 @@ describe("GET /users/", () => {
     describe("when passed without id", () => {
         test("should respond with a 200 status code", async () => {
             const response = await request(app).get(`/users/`).send();
-            console.log(response.body);
+            //console.log(response.body);
             expect(response.statusCode).toBe(200);
         });
     });
@@ -66,8 +70,8 @@ describe("DEL /users/:id", () => {
     describe("when passed an id of an existing user", () => {
         test("should respond with a 200 status code", async () => {
             const response = await request(app).delete(`/users/${localId}`).send();
-            console.log("localId : " + localId);
-            console.log(response.body);
+            //console.log("localId : " + localId);
+            //console.log(response.body);
             expect(response.statusCode).toBe(200);
         });
     });
@@ -80,7 +84,7 @@ describe("GET /users/:id", () => {
     describe("when passed an unknown id", () => {
         test("should respond with a 404 status code", async () => {
             const response = await request(app).get(`/users/999999`).send();
-            console.log(response.body);
+            //console.log(response.body);
             expect(response.statusCode).toBe(404);
         });
     });

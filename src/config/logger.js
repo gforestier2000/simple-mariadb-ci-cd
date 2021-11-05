@@ -11,7 +11,7 @@ const levels = {
   fatal: 60
 };
 
-console.log('process.env.LOGLEVEL : ' + process.env.LOGLEVEL);
+//console.log('process.env.LOGLEVEL : ' + process.env.LOGLEVEL);
 // create a Pino logger
 const logger = pino({
   // set the own levels
