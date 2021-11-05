@@ -14,6 +14,11 @@ var listener = app.listen(PORT, () => {
     console.log(port);
     console.log(listener.address());
   });
+
+  setTimeout(() => {
+      console.log('Kill après :  60 000 ms');
+      process.kill(0);
+  },60000);
   
 
 
