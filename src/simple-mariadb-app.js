@@ -23,7 +23,7 @@ app.get("/de", (request, response) => {
     //console.log("GET / requested");
     //console.log(request.query);
     let name = request.query.name || '';
-    response.status(200).send(`<center><h1>Willcomen ${name}</h1></center>`);
+    response.status(200).send(`<center><h1>Willkomen ${name}</h1></center>`);
 });
 
 // add user route handler
