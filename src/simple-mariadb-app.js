@@ -16,14 +16,14 @@ app.get("/", (request, response) => {
     //console.log("GET / requested");
     //console.log(request.query);
     let name = request.query.name || '';
-    response.status(200).send(`<center><h1>Bienvenue  ${name}</h1></center>`);
+    response.status(200).send(`<center><h1>Bienvenue ${name} </h1></center>`);
 });
 // simple greeting route
 app.get("/de", (request, response) => {
     //console.log("GET / requested");
     //console.log(request.query);
     let name = request.query.name || '';
-    response.status(200).send(`<center><h1>Willkomen  ${name}</h1></center>`);
+    response.status(200).send(`<center><h1>Willkomen ${name} </h1></center>`);
 });
 
 // add user route handler
