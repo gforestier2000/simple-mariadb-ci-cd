@@ -6,6 +6,8 @@ services:
     restart: always
     volumes:
       - dbgfodata:/var/lib/mysql
+      - ./sql/:/docker-entrypoint-initdb.d/
+    
     ports:
       - 5306:3306
     environment:
@@ -29,7 +31,7 @@ services:
   smcicd:
     depends_on:
       - dbgfo
-    image: smcicd:latest
+    image: gforest/simple-mariadb-ci-cd:latest
     restart: always
     ports:
       - 8042:8042
