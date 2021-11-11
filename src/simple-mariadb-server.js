@@ -7,7 +7,7 @@ const PORT = process.env.NODEPORT || 3000;
 // setup app handle 
 const app = require('./simple-mariadb-app');
 
-
+console.log('version : 0.0.1');
 // start listening
 var listener = app.listen(PORT, () => {
     console.log("Listening on port " + PORT);
