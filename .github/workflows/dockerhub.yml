@@ -42,7 +42,7 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: gforest/simple-mariadb-ci-cd:latest      
+          tags: gforest/simple-mariadb-ci-cd:v0.0.1      
           id: docker_build
 
 
