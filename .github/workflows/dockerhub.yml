@@ -1,4 +1,4 @@
-name: GithubCICD
+name: GithubCICDtoHubDocker
 on: push
 
 jobs:
@@ -36,13 +36,14 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push
+        id: docker_build
         uses: docker/build-push-action@v2
         with:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: gforest/simple-mariadb-ci-cd:v0.0.1      
-          id: docker_build
+          tags: gforest/simple-mariadb-ci-cd:latest      
+          
 
 
 
