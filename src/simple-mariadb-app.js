@@ -16,7 +16,7 @@ app.get("/", (request, response) => {
     //console.log("GET / requested");
     //console.log(request.query);
     let name = request.query.name || '';
-    response.status(200).send(`<center><h1>Bienvenue ${name} </h1></center>`);
+    response.status(200).send(`<center><h1>Bienvenue ${name} </h1></center><br><h1>version 0.0.4</h1>`);
 });
 // simple greeting route
 app.get("/de", (request, response) => {
